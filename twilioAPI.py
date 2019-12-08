@@ -19,21 +19,21 @@ v2=IntVar()
 
 def register():
     from twilio.rest import TwilioRestClient
-    accSid = 'ACbcd368b4d27719178249339671a5e967'
-    authToken = '467640f44532fb348c3efa5f8fe03c70'
+    accSid = 'your id'
+    authToken = 'your token'
     twilioClient = TwilioRestClient(accSid, authToken)
     twilioClient.messages.create(body="Hi this message was delivered to you using TWILIO-API as a part of python project",
-                                 to="+917508337709", from_="+12404363599")
+                                 to="recipient number", from_="twilio number")
     print("message sent")
 
 
 def call():
     from twilio.rest import TwilioRestClient
-    account_sid = 'AC303a272ce3a1ce130c85f39f30a13484'
-    auth_token  = 'febe70dfe0c603fa840b788dfbbf3b3c'
+    account_sid = 'your id'
+    auth_token  = 'your token'
     client = TwilioRestClient(account_sid, auth_token)
 
-    calls = client.calls.create(to="+918699006213",from_="+18572541981",
+    calls = client.calls.create(to="recipient number",from_="sender number",
                                 url="http://foo.com/call.xml")
     print(calls.to)
     print("CALL CONNECTED")
